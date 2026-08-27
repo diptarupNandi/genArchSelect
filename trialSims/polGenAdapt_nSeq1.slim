@@ -32,9 +32,9 @@ initialize() {
 
 }
 
-fitness(m2) { return 1.0; }
+mutationEffect(m2) { return 1.0; }
 
-1 {
+1 early() {
 	sim.addSubpop("p1", 10000);
 }
 
@@ -60,9 +60,9 @@ fitness(m2) { return 1.0; }
 	
 	// Output and check for termination
 	mean_phenotype = mean(phenotypes);
-	if (sim.generation % 100 == 0)
+	if (sim.cycle % 100 == 0)
 	{
-		catn(sim.generation + ": \t" + mean_phenotype + "\t" + h_sqrd + "\t" + Va + "\t" + numQTLS + "\t" +  numFxdQTLs);
+		catn(sim.cycle + ": \t" + mean_phenotype + "\t" + h_sqrd + "\t" + Va + "\t" + numQTLS + "\t" +  numFxdQTLs);
 		
 		//		catn(h_sqrd + "\t" + Va + "\t" + Ve + "\t" + Vp );
 		
